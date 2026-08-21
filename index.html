@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Wardie</title>
+  <meta name="description" content="Privacy Policy for Wardie, the AI wardrobe and outfit companion app." />
+  <style>
+    :root {
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --surface-muted: #F5F2ED;
+      --text: #1C1917;
+      --text-secondary: #57534E;
+      --text-muted: #78716C;
+      --brand: #4F46E5;
+      --border: rgba(28, 25, 23, 0.10);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    header {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.9px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .updated {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    section { margin-bottom: 32px; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.35px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15.5px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    a { color: var(--brand); }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="app-name">Wardie</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: July 2026</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Wardie (beta) helps you organize your wardrobe and get outfit suggestions. This policy explains what we collect, how we use it, and your choices.</p>
+      <p>This app is in public beta. Features and data practices may change as we improve the product.</p>
+    </section>
+
+    <section>
+      <h2>Accounts and authentication</h2>
+      <p>Wardie requires a Supabase Auth account (email and password) to sign in. Your wardrobe, style learning, and profile data are tied to your authenticated user ID.</p>
+      <p>Row-level security in our database limits access to your own rows. Session tokens are stored securely on your device. Sign out clears local session data; your data remains on the server until you delete your account.</p>
+    </section>
+
+    <section>
+      <h2>Wardrobe photos</h2>
+      <p>When you add clothing, photos you upload are stored in Supabase Storage (wardrobe-images bucket) so you can view and manage your wardrobe.</p>
+      <p>Photos are linked to your profile and used to display items in the app.</p>
+    </section>
+
+    <section>
+      <h2>AI clothing analysis</h2>
+      <p>When you scan clothing, uploaded images are sent to our Wardie AI backend, which uses Anthropic's Claude vision API to detect category, colors, style tags, formality, comfort, sporty scores, and similar metadata.</p>
+      <p>Images are compressed before analysis. Analysis results are saved with your wardrobe items to power recommendations.</p>
+      <p>We do not use your photos to train public AI models. Anthropic processes requests under their API terms.</p>
+    </section>
+
+    <section>
+      <h2>Style preferences and learning</h2>
+      <p>We store profile details you enter (name, gender, age, preferred vibes) and learned style signals from your activity.</p>
+      <p>This includes user style profiles, per-vibe profiles, preference weights, swipe likes/dislikes, outfit history, and Wardie progress stored in Supabase and on your device.</p>
+    </section>
+
+    <section>
+      <h2>Swipe interactions</h2>
+      <p>Style Swipe likes and dislikes are stored to learn what you prefer.</p>
+      <p>Swipe session progress is kept on your device and may sync with our database.</p>
+    </section>
+
+    <section>
+      <h2>Weather and location</h2>
+      <p>If you use weather-based outfit suggestions, the app may request your location (with your permission) or use a location you provide to fetch local weather.</p>
+      <p>We use weather only to improve outfit context — we do not sell location data.</p>
+    </section>
+
+    <section>
+      <h2>Storage and database</h2>
+      <p>Wardrobe images are stored in Supabase Storage. Profile, wardrobe, learning, outfit history, and feedback data are stored in Supabase database tables.</p>
+      <p>Cached images may be held temporarily on your device for faster loading.</p>
+    </section>
+
+    <section>
+      <h2>Crash reporting and analytics</h2>
+      <p>If enabled at build time, anonymous crash reports may be sent to Sentry to help us fix bugs. No wardrobe photos are included in crash reports.</p>
+      <p>If enabled, anonymous usage analytics may be sent to PostHog (e.g. outfit generated, item added). Analytics uses a random device identifier, not your name.</p>
+      <p>You can disable crash logging and analytics in production builds where those features are not configured.</p>
+    </section>
+
+    <section>
+      <h2>Data retention</h2>
+      <p>We retain your data while you use the app. Outfit history and learning data accumulate to improve personalization.</p>
+      <p>When you delete your account, we delete your wardrobe items, uploaded images, learning profiles, preference weights, outfit history, style feedback, and profile records from our systems where deletion is supported.</p>
+    </section>
+
+    <section>
+      <h2>Your rights</h2>
+      <p>You can delete your account from Profile at any time.</p>
+      <p>You may contact us to request access to or correction of your data where applicable under local law.</p>
+      <p>Deletion is permanent and cannot be undone.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about privacy? Email us at <a href="mailto:hello.wardie@gmail.com">hello.wardie@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+      © 2026 Wardie. This policy applies to the Wardie mobile app.
+    </footer>
+  </div>
+</body>
+</html>
